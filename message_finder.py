@@ -1,5 +1,3 @@
-
-
 # calculate mean
 def mean(inputlist):
     total = 0
@@ -21,7 +19,7 @@ def chi_square(inputlist):
 
 # main program loop, iterate over all files
 # format of the filename is  file00000.txt, file00001.txt, … , file17999.txt
-for nums in range(0, 10):
+for nums in range(0, 17999):
     name = "file_%d" % nums + ".txt"
     if len(name) == 14:
         name = "file_0%d" % nums + ".txt"
@@ -33,15 +31,13 @@ for nums in range(0, 10):
         name = "file_0000%d" % nums + ".txt"
     if len(name) == 10:
         name = "file_00000%d" % nums + ".txt"
-    print("opening " + name)
+    #print("Opening: " + name)
 
     # open a file, read its contents
-    #with open("/Users/ewilbe5944/project/snel/text_files/" + name, 'r') as f:
-    with open(name, 'r') as f:
+    #using this format but you gotta write the path: with open(name, 'r') as f:
+    with open("/Users/ewilbe5944/project/snel/text_files/" + name, 'r') as f:
         readcontent = f.read()
         f.close()
-
-    print("a little content "+readcontent[0:20])
 
     # populate counts with number of occurences of each letter
     counts = [0] * 127
@@ -50,10 +46,9 @@ for nums in range(0, 10):
         counts[n] += 1
     # we are only interested in values above 32    
     counts = counts[32:127]
-    print("number of As %d" % counts[65])
 
     X2 = chi_square(counts)
-    print("chi chi = %d" % X2)
-    if X2 > 100:
-        print("chi chi for this file is over 100: " + name  )
-#ok so it works but it only print the last numbered file
+    if X2 > 170:
+        print(name + " is over 170")
+        print("chi chi = %d" % X2)
+
