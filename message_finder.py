@@ -49,6 +49,6 @@ for nums in range(17999):
 
     X2 = chi_square(counts)
     if X2 > 140:
-        print(name + " is over 120")
+        print(name + " is over 140")
         print("chi chi = %d" % X2)
 
