@@ -19,7 +19,7 @@ def chi_square(inputlist):
 
 # main program loop, iterate over all files
 # format of the filename is  file00000.txt, file00001.txt, … , file17999.txt
-for nums in range(0, 17999):
+for nums in range(17999):
     name = "file_%d" % nums + ".txt"
     if len(name) == 14:
         name = "file_0%d" % nums + ".txt"
@@ -48,7 +48,7 @@ for nums in range(0, 17999):
     counts = counts[32:127]
 
     X2 = chi_square(counts)
-    if X2 > 170:
-        print(name + " is over 170")
+    if X2 > 140:
+        print(name + " is over 120")
         print("chi chi = %d" % X2)
 
