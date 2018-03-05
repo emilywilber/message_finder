@@ -19,18 +19,11 @@ def chi_square(inputlist):
 
 # main program loop, iterate over all files
 # format of the filename is  file00000.txt, file00001.txt, … , file17999.txt
-for nums in range(17999):
-    name = "file_%d" % nums + ".txt"
-    if len(name) == 14:
-        name = "file_0%d" % nums + ".txt"
-    if len(name) == 13:
-        name = "file_00%d" % nums + ".txt"
-    if len(name) == 12:
-        name = "file_000%d" % nums + ".txt"
-    if len(name) == 11:
-        name = "file_0000%d" % nums + ".txt"
-    if len(name) == 10:
-        name = "file_00000%d" % nums + ".txt"
+
+       
+for nums in range(18000):
+    name = "file_%05d" % nums + ".txt"
+
     #print("Opening: " + name)
 
     # open a file, read its contents
