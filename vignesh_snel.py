@@ -15,7 +15,8 @@ def shift(letter, shift_amount):
         unicode_value += - 95
     elif unicode_value < 32:
         unicode_value += 95
-
+        if unicode_value < 32:
+            unicode_value += 95
     new_letter = chr(unicode_value)
 
     return new_letter
@@ -61,7 +62,7 @@ def e101_v_decrypt(message, keyword):
 
 # reads the given file and returns its contents
 def readfile(filename):
-    with open(filename, 'r') as f:
+    with open("C:/Users/ewilbe5944/project/snel/text_files/file_012499.txt", 'r') as f:
         contents = f.read()
         f.close()
     return contents
@@ -88,4 +89,3 @@ if has_keyword(decrypted_text, common)== True:
         f.write(decrypted_text)
 else:
     print("***No readable text in file :" + encoded_file)
-
