@@ -18,15 +18,15 @@ def chi_square(inputlist):
     return X
 
 # main program loop, iterate over all files
-# format of the filename is  file00000.txt, file00001.txt, … , file17999.txt
+# format of the filename is  file000000.txt, file000001.txt, … , file017999.txt
 
        
 for nums in range(18000):
-    name = "file_%05d" % nums + ".txt"
+    name = "file_%06d" % nums + ".txt"
 
     # open a file, read its contents
     #using this format but you gotta write the path: with open(name, 'r') as f:
-    with open("/Users/ewilbe5944/project/snel/text_files/" + name, 'r') as f:
+    with open( name, 'r') as f:
         readcontent = f.read()
         f.close()
 
