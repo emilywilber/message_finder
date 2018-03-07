@@ -6,7 +6,7 @@ def mean(inputlist):
     total = total / len(inputlist)
     return total
 
-# CHI SQUARE calculation
+# Chi Square calculation
 def chi_square(inputlist):
     expected = mean(inputlist)
     
@@ -23,8 +23,6 @@ def chi_square(inputlist):
        
 for nums in range(18000):
     name = "file_%05d" % nums + ".txt"
-
-    #print("Opening: " + name)
 
     # open a file, read its contents
     #using this format but you gotta write the path: with open(name, 'r') as f:
@@ -43,5 +41,5 @@ for nums in range(18000):
     X2 = chi_square(counts)
     if X2 > 140:
         print(name + " is over 140")
-        print("chi chi = %d" % X2)
+        print("chi square = %d" % X2)
 
